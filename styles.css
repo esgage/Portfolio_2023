@@ -1,0 +1,50 @@
+html{
+    margin: 0;
+}
+
+body{
+    color:rgb(192, 201, 203);
+    background-color: rgb(15, 32, 42);
+    margin: 0;
+}
+
+.initial-view{
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 1px;
+    position: relative;
+}
+
+h1{
+    text-align: center;
+}
+
+.intro{
+    display: flex;
+    width: 1000px;
+    align-items: stretch;
+    margin: auto;
+}
+
+.intro>div{
+    flex: 1;
+    background-color: #1e3542;
+}
+
+.project-container{
+    background-color: #0c171e;
+}
+
+.project{
+    display: flex;
+}
+
+.see-work-btn{
+    width: 200px;
+    height: 100px;
+    background-color: #394a54;
+    left: 50%;
+    transform: translateX(-100px);
+    position: absolute;
+    bottom: 50px;
+}
