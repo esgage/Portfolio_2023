@@ -6,6 +6,7 @@ body{
     color:rgb(192, 201, 203);
     background-color: rgb(15, 32, 42);
     margin: 0;
+    font-family: 'Yantramanav', sans-serif;
 }
 
 .initial-view{
@@ -16,7 +17,9 @@ body{
 }
 
 h1{
-    text-align: center;
+    text-align: left;
+    width: 600px;
+    margin: auto;
 }
 
 .intro{
@@ -28,15 +31,23 @@ h1{
 
 .intro>div{
     flex: 1;
-    background-color: #1e3542;
+    margin:0 0 0 10px;
+}
+
+.intro>div:first-child{
+    margin:0;
 }
 
 .project-container{
     background-color: #0c171e;
+    position: relative;
+    overflow: hidden;
 }
 
 .project{
     display: flex;
+    width: 1000px;
+    margin: auto;
 }
 
 .see-work-btn{
@@ -47,4 +58,39 @@ h1{
     transform: translateX(-100px);
     position: absolute;
     bottom: 50px;
+}
+
+canvas{
+    height: 569px;
+    width: 800px;
+    filter:blur(100px) saturate(4);
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.project-image img{
+    position: relative;
+    z-index: 2;
+}
+
+.project-details a{
+    box-sizing: border-box;
+    color:rgb(192, 201, 203);
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    width: 200px;
+    border:2px solid rgb(192, 201, 203);
+    background-color: rgba(192, 201, 203, 0);
+    transition: linear .2s;
+    margin-bottom: 10px;
+}
+
+.project-details a:hover{
+    color: rgb(15, 32, 42);
+    background-color: rgba(192, 201, 203, 1);
 }
