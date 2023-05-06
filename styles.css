@@ -4,7 +4,7 @@ html{
 
 body{
     color:rgb(192, 201, 203);
-    background-color: rgb(15, 32, 42);
+    background-color: #0c171e;
     margin: 0;
     font-family: 'Yantramanav', sans-serif;
 }
@@ -14,24 +14,30 @@ body{
     box-sizing: border-box;
     padding: 1px;
     position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 h1{
     text-align: left;
-    width: 600px;
+    max-width: 600px;
     margin: auto;
 }
 
 .intro{
     display: flex;
-    width: 1000px;
+    max-width: 1200px;
     align-items: stretch;
     margin: auto;
 }
 
+.intro h2{
+    margin-top: 0;
+}
+
 .intro>div{
     flex: 1;
-    margin:0 0 0 10px;
+    margin:0 0 0 50px;
 }
 
 .intro>div:first-child{
@@ -39,14 +45,13 @@ h1{
 }
 
 .project-container{
-    background-color: #0c171e;
     position: relative;
     overflow: hidden;
 }
 
 .project{
     display: flex;
-    width: 1200px;
+    max-width: 1200px;
     height: auto;
     margin: auto;
     padding-top: 100px;
@@ -67,16 +72,25 @@ h1{
 }
 
 canvas{
-    height: 560px;
-    width: 800px;
     filter:blur(100px) saturate(4);
     position: absolute;
     z-index: 1;
+    width: 100%;
+    max-width: 800px;
 }
 
 .project-img-container img{
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+.project-details{
+    width: 400px;
+    position: relative;
+    z-index: 3;
 }
 
 .project-details a{
