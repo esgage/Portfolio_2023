@@ -1,12 +1,23 @@
+:root{
+    --orange: #ee801e;
+    --green: #8b9f2a;
+    --text-white:rgb(192, 201, 203);
+}
+
 html{
     margin: 0;
 }
 
 body{
-    color:rgb(192, 201, 203);
+    color:var(--text-white);
     background-color: #0c171e;
     margin: 0;
     font-family: 'Yantramanav', sans-serif;
+}
+
+a{
+    color: var(--text-white);
+    text-decoration: none;
 }
 
 .initial-view{
@@ -18,10 +29,56 @@ body{
     grid-template-rows: 1fr 1fr 1fr;
 }
 
-h1{
-    text-align: left;
+.header{
     max-width: 600px;
     margin: auto;
+    display: flex;
+}
+
+h1{
+    text-align: left;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.gear{
+    height: 50px;
+    width: 50px;
+    align-self: center;
+    margin:0;
+    position: relative;
+}
+
+@keyframes spin-clockwise{
+    100%{transform: rotate(90deg);}
+}
+@keyframes spin-counter-clockwise{
+    100%{transform: rotate(-90deg);}
+}
+
+.gear:nth-child(1){
+    top: 17px;
+    left: 5px;
+}
+
+.gear:nth-child(2){
+    top: -10px;
+    left: -5px;
+}
+
+.gear:nth-child(1) path{
+    animation: spin-clockwise;
+}
+.gear:nth-child(2) path{
+    animation: spin-counter-clockwise;
+}
+
+.gear:nth-child(1) path, .gear:nth-child(2) path{
+    transform-origin: 30px 30px;
+    fill: var(--green);
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 .intro{
@@ -35,13 +92,42 @@ h1{
     margin-top: 0;
 }
 
-.intro>div{
-    flex: 1;
+.intro > div{
+    flex: 2;
     margin:0 0 0 50px;
+}
+
+.intro > div:nth-child(3){
+    flex: 1;
 }
 
 .intro>div:first-child{
     margin:0;
+}
+
+.contact a{
+    display: block;
+    margin-top: 20px;
+}
+
+.contact a.mail-link{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.github-icon, .dribbble-icon, .mail-icon{
+    height: 40px;
+    width: auto;
+    fill: var(--text-white);
+}
+
+.mail-icon{
+    height: auto;
+    width: 40px;
+    margin-right: 9px;
 }
 
 .project-container{
@@ -58,13 +144,25 @@ h1{
 }
 
 .see-work-btn{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
     width: 200px;
     height: 100px;
-    background-color: #394a54;
     left: 50%;
     transform: translateX(-100px);
     position: absolute;
     bottom: 50px;
+}
+
+.arrow{
+    fill: var(--text-white);
+}
+
+.see-work-btn:hover .arrow{
+    fill: var(--green)
 }
 
 .project-img-container{
