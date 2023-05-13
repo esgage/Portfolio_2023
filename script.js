@@ -22,3 +22,17 @@ projectImages.forEach((project) => {
         });
     }
 });
+
+const headerContainer = document.querySelector('.header');
+const headerOffset = headerContainer.offsetTop;
+const headerHeight = headerContainer.offsetHeight;
+console.log(headerOffset); 
+console.log('h = ' + headerContainer.offsetHeight);
+
+window.addEventListener('scroll', () => {
+    if(document.documentElement.scrollTop >= headerOffset + headerHeight){
+        headerContainer.classList.add('pin');
+    } else {
+        headerContainer.classList.remove('pin');
+    }
+});
