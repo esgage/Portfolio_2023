@@ -15,7 +15,6 @@ body{
     margin: 0;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
-    scroll-behavior: smooth;
 }
 
 a{
@@ -24,7 +23,7 @@ a{
 }
 
 .initial-view{
-    height: 100vh;
+    min-height: 100vh;
     box-sizing: border-box;
     padding: 1px;
     position: relative;
@@ -53,7 +52,7 @@ a{
     100%{transform: translateY(0px);}
 }
 
-.pin{
+div.pin{
     background-color: rgb(8, 16, 21);
     position: fixed;
     top: 0;
@@ -76,14 +75,18 @@ a{
 .pin .gear:nth-child(1){top:10px;}
 .pin .gear:nth-child(2){left:-6px}
 
-h1{
+.header h1{
     text-align: left;
     align-self: center;
     margin-left: 10px;
+    font-family: 'Oswald';
+    font-weight: 500;
 }
 
 h1, h2, h3{
-    font-weight: 300;
+    font-family: 'Oswald';
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .gear{
@@ -129,7 +132,6 @@ h1, h2, h3{
 .intro{
     display: flex;
     max-width: 1200px;
-    align-items: stretch;
     margin: auto;
 }
 
@@ -261,13 +263,18 @@ canvas{
     z-index: 3;
     align-self: center;
     margin-left: 80px;
+    box-sizing: border-box;
 }
 
 /* study pages */
 
 .study-container{
-    max-width: 1200px;
+    max-width: 1150px;
     margin: auto;
+}
+
+.study-container img{
+    max-width: 100%;
 }
 
 .study-details{
@@ -276,4 +283,97 @@ canvas{
 
 .study-details p{
     margin: 0 80px auto auto;
+}
+
+@media screen and (max-width:900px) {
+
+    .initial-view{
+        padding: 20px;
+    }
+
+    .intro{
+        flex-direction: column;
+        margin: 200px auto 170px auto;
+    }
+
+    .intro > div{
+        margin:0;
+    }
+
+
+}
+
+@media  screen and (max-width:600px) {
+
+    .header{
+        left: calc(50% - 150px);
+        top: 20px;
+    }
+
+    h1{
+        font-size: 28px;
+        width: 200px;
+        margin-left: 10px;
+    }
+
+    .pin h1{
+        width: auto;
+        font-size: 22px;
+    }
+
+    .intro{
+        margin-top: 130px;
+    }
+
+    .contact a{
+        width: fit-content;
+        margin: auto auto 20px auto;
+    }
+
+    .github-icon, .dribbble-icon, .mail-icon{
+        height: 30px;
+    }
+
+    .contact a.mail-link{
+        font-size: 16px;
+    }
+
+    .project{
+        flex-direction: column;
+    }
+
+    .project-img-container{
+        padding: 100px 20px 20px 20px;
+    }
+
+    .project-details{
+        width: 100%;
+        margin: 0;
+        padding: 15px 15px 65px 15px;
+        background-color: #050c11;
+    }
+
+    .cta{
+        margin: auto auto 10px auto;
+    }
+
+    .study-container{
+        padding: 90px 20px 20px 20px;
+    }
+
+    .study-details{
+        flex-direction: column;
+    }
+
+    .study-details p{
+        margin: 0;
+    }
+
+    .study-details .links{
+        margin: 30px auto 30px auto;
+    }
+
+    .study-container img{
+        margin: 0 0 10px 0;
+    }
 }
