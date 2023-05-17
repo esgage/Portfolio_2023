@@ -1,5 +1,7 @@
 :root{
     --orange: #ee801e;
+    --orange2: #dfa61f;
+    --yellow: #d9b115;
     --green: #8b9f2a;
     --text-white:rgb(192, 201, 203);
 }
@@ -11,7 +13,7 @@ html{
 
 body{
     color:var(--text-white);
-    background-color: #0c171e;
+    background-color: rgb(5,12,17);
     margin: 0;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -35,7 +37,7 @@ a{
     margin: auto;
     position: absolute;
     left: calc(50% - 275px);
-    top: 80px;
+    top: 75px;
     z-index: 20;
 }
 
@@ -44,7 +46,14 @@ a{
 }
 
 .header h1{
-    margin: 0;
+    margin: 5px 0 0 0;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: left;
+    align-self: center;
+    margin-left: 10px;
+    font-family: 'Oswald';
+    font-weight: 500;
 }
 
 @keyframes pin-header{
@@ -52,19 +61,26 @@ a{
     100%{transform: translateY(0px);}
 }
 
+.pin h1{
+    font-size: 20px;
+    line-height: 24px;
+    margin: -2px auto auto 2px;
+}
+
 div.pin{
-    background-color: rgb(8, 16, 21);
+    background-color: rgb(5,12,17);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     max-width: none;
     font-size: 10px;
-    box-shadow: 2px 2px 3px rgba(0,0,0,.5);
+    box-shadow: 2px 2px 3px rgba(0,0,0,.6);
     animation: pin-header;
     animation-duration: 200ms;
     animation-iteration-count: 1;
     animation-timing-function: linear;
+    padding: 5px;
 }
 
 .pin .gear{
@@ -74,14 +90,6 @@ div.pin{
 
 .pin .gear:nth-child(1){top:10px;}
 .pin .gear:nth-child(2){left:-6px}
-
-.header h1{
-    text-align: left;
-    align-self: center;
-    margin-left: 10px;
-    font-family: 'Oswald';
-    font-weight: 500;
-}
 
 h1, h2, h3{
     font-family: 'Oswald';
@@ -123,7 +131,7 @@ h1, h2, h3{
 
 .gear:nth-child(1) path, .gear:nth-child(2) path{
     transform-origin: 30px 30px;
-    fill: var(--green);
+    fill: var(--yellow);
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -133,6 +141,7 @@ h1, h2, h3{
     display: flex;
     max-width: 1200px;
     margin: auto;
+    padding: 0 20px 0 20px;
 }
 
 .intro h2{
@@ -162,20 +171,20 @@ h1, h2, h3{
 .contact a.mail-link{
     display: flex;
     align-items: center;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     margin-top: 0;
 }
 
 .github-icon, .dribbble-icon, .mail-icon{
-    height: 40px;
+    height: 30px;
     width: auto;
     fill: var(--text-white);
 }
 
 .mail-icon{
     height: auto;
-    width: 40px;
+    width: 30px;
     margin-right: 9px;
 }
 
@@ -199,7 +208,7 @@ h1, h2, h3{
 }
 
 .see-work-btn:hover .arrow{
-    fill: var(--green)
+    fill: var(--yellow)
 }
 
 .cta{
@@ -227,6 +236,11 @@ h1, h2, h3{
 .project-container{
     position: relative;
     overflow: hidden;
+    border-bottom: 4px solid #010406;
+}
+
+.project-container:first-child{
+    border-top: 4px solid #010406;
 }
 
 .project{
@@ -234,6 +248,7 @@ h1, h2, h3{
     max-width: 1200px;
     height: auto;
     margin: auto;
+    padding: 0 20px 0 20px;
 }
 
 .project-img-container{
@@ -245,8 +260,7 @@ canvas{
     filter:blur(100px) saturate(4);
     position: absolute;
     z-index: 1;
-    width: 100%;
-    max-width: 800px;
+    opacity: .5;
 }
 
 .project-img-container img{
@@ -266,11 +280,22 @@ canvas{
     box-sizing: border-box;
 }
 
+.project-details h3{
+    border-bottom:1px solid rgb(54, 69, 79);
+    padding-bottom: 10px;
+    width: fit-content;
+}
+
+.project-details p{
+    margin-bottom: 30px;
+}
+
 /* study pages */
 
 .study-container{
     max-width: 1150px;
     margin: auto;
+    padding: 90px 20px 20px 20px;
 }
 
 .study-container img{
@@ -323,6 +348,7 @@ canvas{
 
     .intro{
         margin-top: 130px;
+        padding: 0;
     }
 
     .contact a{
@@ -330,35 +356,33 @@ canvas{
         margin: auto auto 20px auto;
     }
 
-    .github-icon, .dribbble-icon, .mail-icon{
-        height: 30px;
-    }
-
-    .contact a.mail-link{
-        font-size: 16px;
+    .project-container{
+        border-bottom: 10px solid #010406;
     }
 
     .project{
         flex-direction: column;
+        background-color: #050c11;
     }
 
     .project-img-container{
-        padding: 100px 20px 20px 20px;
+        padding: 100px auto auto auto;
+    }
+
+    canvas{
+        opacity: 1;
     }
 
     .project-details{
         width: 100%;
         margin: 0;
         padding: 15px 15px 65px 15px;
-        background-color: #050c11;
+        background-color: rgba(5,12,17, .8);
+        box-shadow: 0px 20px 20px 20px rgba(0, 0, 0, .8);
     }
 
     .cta{
         margin: auto auto 10px auto;
-    }
-
-    .study-container{
-        padding: 90px 20px 20px 20px;
     }
 
     .study-details{
