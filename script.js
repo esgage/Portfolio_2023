@@ -7,17 +7,14 @@ const applyBackground = (project) => {
     projectBackground.setAttribute('height', projectImage.height);
     const ctx = projectBackground.getContext('2d');
     ctx.drawImage(projectImage, 0, 0);
-    console.log('function called');
 }
 
 projectImages.forEach((project) => {
     const projectImage = project.querySelector('img');
     if (projectImage.complete){
-        console.log('if');
         applyBackground(project);
     } else {
         projectImage.addEventListener('load', () => {
-            console.log('else');
             applyBackground(project);
         });
     }
@@ -26,8 +23,6 @@ projectImages.forEach((project) => {
 const headerContainer = document.querySelector('.header');
 const headerOffset = headerContainer.offsetTop;
 const headerHeight = headerContainer.offsetHeight;
-console.log(headerOffset); 
-console.log('h = ' + headerContainer.offsetHeight);
 
 window.addEventListener('scroll', () => {
     if(document.documentElement.scrollTop >= headerOffset + headerHeight){
@@ -35,4 +30,20 @@ window.addEventListener('scroll', () => {
     } else {
         headerContainer.classList.remove('pin');
     }
+});
+
+const projectContainers = document.querySelectorAll('.project-container');
+
+const observeProject = new IntersectionObserver((project) => {
+    project.forEach((entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('highlight');
+        } else {
+            entry.target.classList.remove('highlight');
+        }
+    });
+}, {threshold: .75});
+
+projectContainers.forEach((project) => {
+    observeProject.observe(project);
 });

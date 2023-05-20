@@ -37,7 +37,7 @@ a{
     margin: auto;
     position: absolute;
     left: calc(50% - 275px);
-    top: 75px;
+    top: 100px;
     z-index: 20;
 }
 
@@ -47,12 +47,12 @@ a{
 
 .header h1{
     margin: 5px 0 0 0;
-    font-size: 32px;
-    line-height: 38px;
+    font-size: 38px;
+    line-height: 45px;
     text-align: left;
     align-self: center;
     margin-left: 10px;
-    font-family: 'Oswald';
+    font-family: 'Oswald', sans-serif;
     font-weight: 500;
 }
 
@@ -98,8 +98,8 @@ h1, h2, h3{
 }
 
 .gear{
-    height: 50px;
-    width: 50px;
+    height: 55px;
+    width: 55px;
     align-self: center;
     margin:0;
     position: relative;
@@ -113,13 +113,13 @@ h1, h2, h3{
 }
 
 .gear:nth-child(1){
-    top: 17px;
+    top: 19px;
     left: 5px;
 }
 
 .gear:nth-child(2){
-    top: -10px;
-    left: -5px;
+    top: -11px;
+    left: -6px;
 }
 
 .gear:nth-child(1) path{
@@ -259,10 +259,20 @@ h1, h2, h3{
 
 /* projects */
 
+#projects-container{
+    padding-bottom: 10px;
+}
+
 .project-container{
     position: relative;
     overflow: hidden;
     border-bottom: 4px solid #010406;
+    transition: opacity .3s;
+    opacity: .3;
+}
+
+.highlight{
+    opacity: 1;
 }
 
 .project-container:first-child{
@@ -288,6 +298,7 @@ canvas{
     z-index: 1;
     opacity: .5;
 }
+
 
 .project-img-container img{
     position: relative;
@@ -342,6 +353,30 @@ canvas{
     .initial-view{
         padding: 20px;
     }
+        
+    .header{
+        top: 75px;
+    }
+
+    .header h1{
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .gear{
+        height: 50px;
+        width: 50px;
+    }
+
+    .gear:nth-child(1){
+        top: 17px;
+        left: 5px;
+    }
+    
+    .gear:nth-child(2){
+        top: -10px;
+        left: -5px;
+    }
 
     .intro{
         flex-direction: column;
@@ -350,6 +385,11 @@ canvas{
 
     .intro > div{
         margin:0;
+    }
+
+    
+    .project-container{
+        opacity: 1;
     }
 
 
@@ -393,7 +433,7 @@ canvas{
     }
 
     .project-img-container{
-        padding: 100px auto auto auto;
+        padding: 100px 0 0 0;
     }
 
     canvas{
