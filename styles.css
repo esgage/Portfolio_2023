@@ -61,7 +61,7 @@ a{
     100%{transform: translateY(0px);}
 }
 
-.pin h1{
+.header.pin h1{
     font-size: 20px;
     line-height: 24px;
     margin: -2px auto auto 2px;
@@ -88,8 +88,8 @@ div.pin{
     width: 25px;
 }
 
-.pin .gear:nth-child(1){top:10px;}
-.pin .gear:nth-child(2){left:-6px}
+.pin .gear:nth-child(1){top:10px; left: 6px;}
+.pin .gear:nth-child(2){top:-10px; left:-6px;}
 
 h1, h2, h3{
     font-family: 'Oswald';
@@ -348,7 +348,33 @@ canvas{
     margin: 0 80px auto auto;
 }
 
-@media screen and (max-width:900px) {
+@media (min-width:900px) and (min-height:1100px){
+    .header{
+        max-width: 800px;
+        left: calc(50% - 330px);
+        top: 180px;
+    }
+
+    .header h1{
+        font-size: 48px;
+        line-height: 57px;
+    }
+
+    .gear{
+        height: 60px;
+        width: 60px;
+    }
+
+    .gear:nth-child(1){
+        left: 6px;
+    }
+
+    .gear:nth-child(2){
+        top: -13px;
+    }
+}
+
+@media (max-width:900px) {
 
     .initial-view{
         padding: 20px;
@@ -395,7 +421,7 @@ canvas{
 
 }
 
-@media  screen and (max-width:600px) {
+@media  (max-width:600px) {
 
     .header{
         left: calc(50% - 150px);
